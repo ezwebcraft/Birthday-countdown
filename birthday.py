@@ -1,19 +1,33 @@
+import datetime
 
 def print_header():
-    pass
+    print('------------------------------')
+    print('       Birthday CountDown     ')
+    print('------------------------------')
+    print()
 
 def get_birthday_from_user():
-    pass
+    print("When were you born? ")
+    year = int(input("Year [YYYY]: "))
+    month = int(input("Month [MM]: "))
+    day = int(input("Day [DD]: "))
+
+    birthday = datetime.date(year, month, day)
+    return birthday
 
 def computer_days_between_dates():
     pass
 
-def print_birthdat_information():
+def print_birthday_information():
     pass
 
 def main():
     print_header()
-    get_birthday_from_user()
+    bday = get_birthday_from_user()
+    print(bday)
     now = None
-    number_of_days = computer_days_between_dates(bday, now)
-    print_birthdat_information()
+    #number_of_days = computer_days_between_dates(bday, now)
+    #print_birthdat_information(number_of_days)
+
+
+main()
