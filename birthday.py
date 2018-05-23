@@ -15,14 +15,20 @@ def get_birthday_from_user():
     birthday = datetime.date(year, month, day)
     return birthday
 
-def computer_days_between_dates(date1, date2):
-    dt = date1 - date2
+def computer_days_between_dates(original_date, target_date):
+    this_year = datetime.date(target_date.year,original_date.month,original_date.day)
 
-    print(dt, type(dt))
+    dt = this_year - target_date
+    return dt.days
 
+def print_birthday_information(days):
+    if days < 0:
+        print("You had your birthday {} days ago this year.".format(days))
+    elif days > 0:
+        print("Your birthday is in {} days".format(days))
+    else:
+        print("Happy birthday!!!")
 
-def print_birthday_information():
-    pass
 
 def main():
     print_header()
@@ -30,7 +36,7 @@ def main():
     print(bday)
     now = datetime.date.today()
     number_of_days = computer_days_between_dates(bday, now)
-    #print_birthdat_information(number_of_days)
+    print_birthday_information(number_of_days)
 
 
 main()
