@@ -15,8 +15,11 @@ def get_birthday_from_user():
     birthday = datetime.date(year, month, day)
     return birthday
 
-def computer_days_between_dates():
-    pass
+def computer_days_between_dates(date1, date2):
+    dt = date1 - date2
+
+    print(dt, type(dt))
+
 
 def print_birthday_information():
     pass
@@ -25,8 +28,8 @@ def main():
     print_header()
     bday = get_birthday_from_user()
     print(bday)
-    now = None
-    #number_of_days = computer_days_between_dates(bday, now)
+    now = datetime.date.today()
+    number_of_days = computer_days_between_dates(bday, now)
     #print_birthdat_information(number_of_days)
 
 
